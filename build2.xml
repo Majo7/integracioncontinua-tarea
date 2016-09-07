@@ -1,1 +1,60 @@
---
+Xml version = " 1.0 " codificación = " UTF-8 " ?>
+<! - Puede editar libremente este archivo. Ver bloques comentadas por debajo de ->
+<! - Algunos ejemplos de cómo personalizar la construcción. ->
+<! - (Si lo elimina y vuelve a abrir el proyecto se volverá a crear.) ->
+<! - Por defecto, sólo la limpieza y construcción comandos utilizan este script de construcción. ->
+<! - Comandos tales como Run, depuración y prueba antes de utilizar esta secuencia de comandos de generación si ->
+<! - Al compilar en Guardar función está desactivada para el proyecto. ->
+<! - Puede desactivar la Compilación en Save (Guardar o Implementar en) el establecimiento ->
+<! - En el cuadro de diálogo Propiedades del proyecto del proyecto .-->
+< Proyecto  nombre = " integracioncontinua-Tarea "  default = " default "  basedir = " . " >
+    < Descripción > Construye, pruebas, y se ejecuta el proyecto integracioncontinua-Tarea. </ Description >
+    < Importación  de archivos = " nbproject / build-impl.xml " />
+    <! -
+    Existen varios objetivos que son de forma predeterminada vacío y que se puede 
+    utilizado para la ejecución de sus tareas. Estos objetivos se ejecutan normalmente
+    antes y después de algunos de los objetivos principales. Son:
+      -preparaciones de init: llamada antes de la inicialización de las propiedades del proyecto
+      -post-init: llamada después de la inicialización de las propiedades del proyecto
+      -preparaciones de compilación: llamado antes de la compilación javac
+      -post-compilación: llamada después de la compilación javac
+      prediseñadas en compilar una sola: llamado antes de la compilación javac de una sola fila
+      -post-compilar una sola: se llama después de la compilación javac de una sola fila
+      -pre-compilación-test: llamado antes de la compilación javac de pruebas JUnit
+      -post-compilar-test: se llama después de la compilación javac de pruebas JUnit
+      -pre-compile-prueba de un solo: llamado antes de la compilación javac de prueba unitaria sola
+      -post-compile-prueba de un solo: se llama después de la compilación javac de prueba JUunit sola
+      -preparaciones de jar: llamada antes de construir JAR
+      -post-jar: llamada después de la construcción JAR
+      -post-clean: llamada después de la limpieza a construir productos
+    (Objetivos que comienzan con '-' no están destinados a ser llamado por su cuenta.)
+    Ejemplo de inserción de un obfuscador después de la compilación podría tener este aspecto:
+        <Nombre de destino = "- después de la compilación">
+            <Obfuscate>
+                <Conjunto de archivos dir = "$ {} build.classes.dir" />
+            </ Obfuscate>
+        </ Target>
+    Para la lista de propiedades disponibles comprobar la importada 
+    nbproject / build-impl.xml archivo. 
+    Otra forma de personalizar la construcción está reemplazando objetivos principales existentes.
+    Los objetivos de interés son: 
+      -init-macrodef-javac: define macro de compilación javac
+      -init-macrodef-junit: define macro para la ejecución junit
+      -init-macrodef-debug: define macro para la depuración de clases
+      -init-macrodef-java: define macro para la ejecución de clases
+      -do-jar: edificio JAR
+      ejecute: ejecución del proyecto 
+      -javadoc-build: generación Javadoc
+      prueba de informe: la generación de informes JUnit
+    Un ejemplo de anular el objetivo para la ejecución del proyecto podría tener este aspecto:
+        <Meta name = "ejecución" depende = "integracioncontinua-Tarea-impl.jar">
+            <Exec dir = "bin" ejecutable = "launcher.exe">
+                <Arg file = "$ {} dist.jar" />
+            </ Exec>
+        </ Target>
+    Observe que el objetivo reemplazado depende del destino frasco y no sólo en 
+    el objetivo de compilación como el destino de ejecución normal hace. Una vez más, para obtener una lista de los disponibles
+    propiedades que se pueden utilizar, compruebe el destino está sustituyendo en el
+    nbproject / build-impl.xml archivo. 
+    ->
+</ Proyecto >
